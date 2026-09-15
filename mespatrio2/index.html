@@ -1,0 +1,391 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitio Web: Mes Patrio</title>
+
+    <style>
+        :root {
+            --primary-green: #006847;
+            --primary-red: #CE1126;
+            --primary-yellow: #D4A017;
+            --primary-purple: #6b21a8;
+
+            --bg-color: #ffffff;
+            --text-color: #333333;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* =========================
+           PÁGINAS
+        ========================= */
+
+        .page-view {
+            width: 100%;
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* =========================
+           PORTADA
+        ========================= */
+
+        .home-screen {
+            min-height: 100vh;
+        }
+
+        .hero-img {
+            display: block;
+            width: 100%;
+            max-width: 600px;
+            height: 300px;
+            object-fit: cover;
+            border: 2px solid #333;
+            border-radius: 8px;
+            margin: 0 auto 20px auto;
+        }
+
+        .hero-title {
+            color: var(--primary-green);
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 0 0 15px 0;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #444444;
+            max-width: 700px;
+            line-height: 1.5;
+            margin-bottom: 30px;
+        }
+
+        /* =========================
+           BOTONES DEL MENÚ
+        ========================= */
+
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 20px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            opacity: 0.85;
+            transform: scale(1.05);
+        }
+
+        .btn-red {
+            background-color: var(--primary-red);
+        }
+
+        .btn-yellow {
+            background-color: var(--primary-yellow);
+        }
+
+        .btn-green {
+            background-color: var(--primary-green);
+        }
+
+        .btn-purple {
+            background-color: var(--primary-purple);
+        }
+
+        /* =========================
+           BOTÓN REGRESAR
+        ========================= */
+
+        .btn-simple-back {
+            display: inline-block;
+            background-color: #e0e0e0;
+            color: #000000;
+            border: 1px solid #777777;
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            margin-bottom: 30px;
+            border-radius: 3px;
+            text-decoration: none;
+        }
+
+        .btn-simple-back:hover {
+            background-color: #cccccc;
+        }
+
+        /* =========================
+           CONTENIDO
+        ========================= */
+
+        .content-container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            color: var(--primary-red);
+            font-size: 2.2rem;
+            border-bottom: 3px solid var(--primary-red);
+            padding-bottom: 10px;
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+
+        h3 {
+            color: var(--primary-green);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            line-height: 1.6;
+            font-size: 1.05rem;
+        }
+
+        /* =========================
+           GRID
+        ========================= */
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            text-align: left;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            text-align: left;
+        }
+
+        /* =========================
+           TARJETAS
+        ========================= */
+
+        .card {
+            background-color: #f9f9f9;
+            border-left: 5px solid var(--primary-green);
+            padding: 20px;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+        }
+
+        /* =========================
+           TARJETAS CON IMAGEN
+        ========================= */
+
+        .media-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .media-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .media-card-content {
+            padding: 15px;
+        }
+
+        /* =========================
+           MITOS
+        ========================= */
+
+        .list-item {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .list-item strong {
+            color: var(--primary-green);
+        }
+
+        .content-with-image {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .content-with-image .text {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .content-with-image img {
+            flex: 1;
+            min-width: 280px;
+            max-width: 100%;
+            border-radius: 6px;
+            object-fit: cover;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            margin-top: auto;
+            padding: 15px;
+            background-color: #333333;
+            color: #ffffff;
+            text-align: center;
+            font-size: 0.85rem;
+            border-radius: 6px;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        footer p {
+            margin: 4px 0;
+            line-height: 1.4;
+            font-size: 0.85rem;
+        }
+
+        /* =========================
+           CELULARES
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            .page-view {
+                padding: 25px 15px;
+            }
+
+            .hero-img {
+                height: 230px;
+            }
+
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .nav-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn {
+                width: 90%;
+                max-width: 300px;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .content-with-image {
+                flex-direction: column;
+            }
+
+            footer {
+                margin-top: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- PORTADA -->
+    <div class="page-view home-screen">
+
+        <img
+            src="https://image-tc.galaxy.tf/wijpeg-9g71sy7mzlzzaoidjmnszjp6q/file.jpg"
+            alt="Ángel de la Independencia"
+            class="hero-img"
+        >
+
+        <h1 class="hero-title">Sitio Web: Mes Patrio</h1>
+
+        <p class="hero-subtitle">
+            Diseño digital interactivo para conmemorar los acontecimientos más
+            relevantes y héroes nacionales de la Independencia de México.
+        </p>
+
+        <!-- MENÚ -->
+        <div class="nav-buttons">
+
+            <a href="linea-tiempo.html" class="btn btn-red">
+                Línea de Tiempo
+            </a>
+
+            <a href="personajes.html" class="btn btn-yellow">
+                Personajes
+            </a>
+
+            <a href="arquitectura.html" class="btn btn-green">
+                Arquitectura
+            </a>
+
+            <a href="mitos.html" class="btn btn-purple">
+                Mitos y Curiosidades
+            </a>
+
+        </div>
+
+        <!-- FOOTER -->
+        <footer>
+            <p><strong>Alumno:</strong> Brian Uriel Ituarte López</p>
+            <p><strong>Grado y Grupo:</strong> 5-I</p>
+            <p><strong>Número de Control:</strong> 24308051280569</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
+```

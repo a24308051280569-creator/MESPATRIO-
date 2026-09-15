@@ -1,0 +1,259 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mitos y Curiosidades — Mes Patrio</title>
+
+    <style>
+        :root {
+            --primary-green: #006847;
+            --primary-red: #CE1126;
+            --primary-yellow: #D4A017;
+            --primary-purple: #6b21a8;
+
+            --bg-color: #ffffff;
+            --text-color: #333333;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* =========================
+           PÁGINAS
+        ========================= */
+
+        .page-view {
+            width: 100%;
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* =========================
+           BOTÓN REGRESAR
+        ========================= */
+
+        .btn-simple-back {
+            display: inline-block;
+            background-color: #e0e0e0;
+            color: #000000;
+            border: 1px solid #777777;
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            margin-bottom: 30px;
+            border-radius: 3px;
+            text-decoration: none;
+        }
+
+        .btn-simple-back:hover {
+            background-color: #cccccc;
+        }
+
+        /* =========================
+           CONTENIDO
+        ========================= */
+
+        .content-container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            color: var(--primary-red);
+            font-size: 2.2rem;
+            border-bottom: 3px solid var(--primary-red);
+            padding-bottom: 10px;
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+
+        h3 {
+            color: var(--primary-green);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            line-height: 1.6;
+            font-size: 1.05rem;
+        }
+
+        /* =========================
+           MITOS
+        ========================= */
+
+        .list-item {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .list-item strong {
+            color: var(--primary-green);
+        }
+
+        .content-with-image {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .content-with-image .text {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .content-with-image img {
+            flex: 1;
+            min-width: 280px;
+            max-width: 100%;
+            border-radius: 6px;
+            object-fit: cover;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            margin-top: auto;
+            padding: 15px;
+            background-color: #333333;
+            color: #ffffff;
+            text-align: center;
+            font-size: 0.85rem;
+            border-radius: 6px;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        footer p {
+            margin: 4px 0;
+            line-height: 1.4;
+            font-size: 0.85rem;
+        }
+
+        /* =========================
+           CELULARES
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            .page-view {
+                padding: 25px 15px;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .content-with-image {
+                flex-direction: column;
+            }
+
+            .content-with-image img {
+                width: 100%;
+            }
+
+            footer {
+                margin-top: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page-view">
+
+        <div class="content-container">
+
+            <a href="index.html" class="btn-simple-back">
+                &lt; Regresar al inicio
+            </a>
+
+            <h2>Mitos y Datos Curiosos</h2>
+
+            <div class="content-with-image">
+
+                <div class="text">
+
+                    <div class="list-item">
+                        <p>
+                            <strong>✓ ¿Quién tocó la campana?:</strong>
+                            El cura Miguel Hidalgo no tocó la campana de
+                            Dolores la madrugada del 16, sino el campanero
+                            de la parroquia, José Galván.
+                        </p>
+                    </div>
+
+                    <div class="list-item">
+                        <p>
+                            <strong>✓ La leyenda de "El Pípila":</strong>
+                            Juan José de los Reyes Martínez representa la
+                            valentía colectiva de los mineros en la toma
+                            de la Alhóndiga de Granaditas.
+                        </p>
+                    </div>
+
+                    <div class="list-item">
+                        <p>
+                            <strong>✓ Retratos de Hidalgo:</strong>
+                            No existen retratos pintados en vida de Don
+                            Miguel Hidalgo; las imágenes populares son
+                            interpretaciones posteriores.
+                        </p>
+                    </div>
+
+                    <div class="list-item">
+                        <p>
+                            <strong>✓ Significado de los Colores:</strong>
+                            En la bandera del Ejército Trigarante (1821),
+                            el verde simbolizaba la Independencia, el
+                            blanco la Religión y el rojo la Unión.
+                        </p>
+                    </div>
+
+                </div>
+
+                <img
+                    src="https://desdelafe.mx/wp-content/uploads/2023/09/Campana-.jpg"
+                    alt="Campana de Dolores"
+                >
+
+            </div>
+
+        </div>
+
+        <footer>
+            <p>
+                <strong>Alumno:</strong> Brian Uriel Ituarte López |
+                <strong>Grado y Grupo:</strong> 5-I |
+                <strong>N° Control:</strong> 24308051280569
+            </p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
+```
